@@ -40,18 +40,33 @@ public class SearchAlgorithms {
 		
 		while (L <= R)
 		{
-			int mid = (int)(L + R) / 2;
+			int mid = (L + R) / 2;
+			/*if (L - R == 1 || L - R == -1)
+			{
+				if (arr[L] == query)
+				{
+					return L;
+				}
+				if (arr[R] == query)
+				{
+					return R;
+				}
+				else
+				{
+					return -1;
+				}
+			}*/
 			if (query == arr[mid])
 			{
 				return mid;
 			}
 			if (query < arr[mid])
 			{
-				R = mid;
+				R = mid - 1;
 			}
 			if (query > arr[mid])
 			{
-				L = mid;
+				L = mid + 1;
 			}
 		}
 		return -1;
